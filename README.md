@@ -1,5 +1,8 @@
 # SanitizeAttr
 
+[![Gem Version](https://badge.fury.io/rb/sanitize_attr.svg)](https://badge.fury.io/rb/sanitize_attr)
+[![Build Status](https://travis-ci.org/dvandersluis/sanitize_attr.svg?branch=master)](https://travis-ci.org/dvandersluis/sanitize_attr)
+
 Automatically run AR attributes through Sanitize.clean before validation.
 
 ## Installation
@@ -18,7 +21,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+class Article < ActiveRecord::Base
+  sanitize_attr :name, :description, config: :default
+end
+```
+
+If no `config` is specified, `Sanitize::Config::BASIC` is used.
 
 ## Contributing
 
